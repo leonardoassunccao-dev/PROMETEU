@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
-import { UserState, Habit, KironMood } from '../types';
+import { UserState, Habit, KironMood } from '../types.ts';
 import { 
   STARTING_LIFE, MAX_LIFE, MAX_HABITS, XP_PER_HABIT, 
   LIFE_PER_HABIT, PENALTY_XP, PENALTY_LIFE, 
   PHRASES, REACTION_PHRASES, NOTIFICATION_MSGS, getLevel, getKironMood 
-} from '../constants';
-import { getTodayStr, getPreviousDay, isHabitDueToday } from '../utils';
+} from '../constants.ts';
+import { getTodayStr, getPreviousDay, isHabitDueToday } from '../utils.ts';
 
 const STORAGE_KEY_USER = 'kiron_user_v2'; 
 const STORAGE_KEY_HABITS = 'kiron_habits_v1';

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { KironMood } from '../types';
+import { KironMood } from '../types.ts';
 
 interface KironAvatarProps {
   mood: KironMood;

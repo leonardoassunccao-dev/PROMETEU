@@ -1,4 +1,4 @@
-import { KironMood } from './types';
+import { KironMood } from './types.ts';
 
 // Game Rules
 export const MAX_HABITS = 3;
