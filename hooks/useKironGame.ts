@@ -54,20 +54,12 @@ export const useKironGame = () => {
   const sendLocalNotification = useCallback((title: string, body: string) => {
     if (!('Notification' in window) || Notification.permission !== 'granted') return;
     
-    // Try Service Worker registration first (better for mobile)
-    if ('serviceWorker' in navigator && navigator.serviceWorker.ready) {
-      navigator.serviceWorker.ready.then(registration => {
-        registration.showNotification(title, {
-          body,
-          icon: 'https://via.placeholder.com/128/4F46E5/FFFFFF?text=K', // Placeholder icon
-          badge: 'https://via.placeholder.com/64/4F46E5/FFFFFF?text=K',
-          tag: 'kiron-daily'
-        });
-      });
-    } else {
-      // Fallback
-      new Notification(title, { body, icon: '' });
-    }
+    // Standard Notification API without Service Worker
+    new Notification(title, { 
+      body, 
+      icon: 'https://via.placeholder.com/128/4F46E5/FFFFFF?text=K',
+      tag: 'kiron-daily'
+    });
   }, []);
 
   const checkAndSendNotifications = useCallback(() => {
